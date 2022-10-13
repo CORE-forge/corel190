@@ -1,4 +1,22 @@
-url: ~
+url: https://core-forge.github.io/corel190/
 template:
+  params:
+    mathjax: true
   bootstrap: 5
-
+  bslib:
+    bg: "#FFFFFF"
+    fg: "#2180a7"
+    primary: "#2180a7"
+    base_font: {google: "Dosis"}
+    heading_font: {google: "Lora"}
+    code_font: {google: "JetBrains Mono"}
+  navbar:
+    pkgdown-nav-height: 74px
+    structure:
+      left:  [intro, reference, articles, tutorials, news]
+      right: [search, github]
+    components:
+      twitter:
+        icon: fa-twitter
+        href: http://twitter.com/SalviniQ
+        aria-label: Twitter

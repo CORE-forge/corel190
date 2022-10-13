@@ -11,6 +11,7 @@ status](https://www.r-pkg.org/badges/version/corel190)](https://CRAN.R-project.o
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/CORE-forge/corel190/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CORE-forge/corel190/actions/workflows/R-CMD-check.yaml)
 [![covr](https://github.com/CORE-forge/corel190/actions/workflows/covr.yaml/badge.svg)](https://github.com/CORE-forge/corel190/actions/workflows/covr.yaml)
+[![pkgdown](https://github.com/CORE-forge/corel190/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/CORE-forge/corel190/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
 The goal of corel190 is to …

@@ -1,6 +1,6 @@
 Package: corel190
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9001
+Title: a tidy interface to l190/2012 dati.anticorruzione
+Version: 0.0.0.9003
 Authors@R: 
     person("Niccolò", "Salvini", , "niccolo.salvini27@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3444-4094"))
@@ -15,3 +15,4 @@ Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
+URL: https://core-forge.github.io/corel190/

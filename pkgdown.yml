@@ -1,8 +1,10 @@
 pandoc: 2.14.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
-articles: {}
-last_built: 2022-10-13T01:32Z
+articles:
+  scrape-xml-data-from-l190: scrape-xml-data-from-l190.html
+  scraping-l190-at-scale: scraping-l190-at-scale.html
+last_built: 2022-10-15T16:56Z
 urls:
   reference: https://core-forge.github.io/corel190/reference
   article: https://core-forge.github.io/corel190/articles

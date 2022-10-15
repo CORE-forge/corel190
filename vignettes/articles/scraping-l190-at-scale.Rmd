@@ -1,0 +1,81 @@
+---
+title: "Scraping l190 at Scale"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+In this article you are going to perform parallel scraping exploiting `corel190` and `furrr` + `future` as a backend engine.
+This may be in your interest if you are planning to analyse a large amount of data coming from "below threshold" tenders. It could be also the case for you to store them in some place, S3 or any other relational database for future use i.e. dasbhoards or computing indicators at large scale.
+
+
+## roadmap
+
+We are going to need to exploit the **full** power of our machines (in the case you are not leveraging any distributed computing or nodes clusters). because that's large data. Steps required are going to be as follows
+
+1. get internal data (if you're here maybe you already have done that, in case you haven't then `devtools::install_github(CORE-forge/corel190)`)
+2. build robust functions so that we can _gently_ fail
+3. setup parallel backend with `furrr`
+4. launch our job
+
+
+## 1.0 Get internal data
+
+I made the work fo you, you can load the package i.e. `library(corel190)` and check `registro_comunicaioni` to get all l190 CA communications to ANAC grouped by year.
+
+```{r data, eval=FALSE}
+
+library(corel190)
+library(dplyr)
+
+registro_comunicazioni |> head(10)
+```
+
+
+
+## 2.0 _Gently_ fail with `posssibly` & `insistently` 
+
+package `purrr` provides convenient wrappers to transform a function by making it run insistently at given retry rate. We are going to set that rate to the one from `robots.txt` file to be compliant withe the servers hosting the xml resource. "Introduce Yourself, Seek Permission, Take Slowly and Never Ask Twice", check out [this Medium article](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01) to understand why manners on the web i.e. _netiquette_ matter. Well we are going yo ask it more then once, since we really want that, at least we are going to ask present ourself an give time to process request, i.e. we are going to be _polite_ af.
+
+```{r wrappers, eval=FALSE}
+rate <- rate_delay(0.1)
+insistent_parse_xml_metadata <- insistently(parse_xml_metadata, rate, quiet = FALSE)
+possible_insistent_parse_xml_metadata <- possibly2(.f = insistent_parse_xml_metadata, otherwise = generate_empty_contrss_metadata)
+
+```
+
+
+## 3.0 stup parallel
+
+Parallel backend to our extent will help up processing more requests by splitting them on R session/ machine cores.
+However backends performance and setups really depend on your machine resources and OS. The laptopn I am using is a Apple MacOS M1, with that said I could be setting multicore (qequally split computing on cores) and multisessions (equally pslit computin on many R session, imagine many RStudio running in background). Generally all Unix like OS can support multcore, but for the sake of geenrality I will be using here multisession.
+
+
+```{r future, eval=FALSE}
+
+library(future)
+library(furrr)
+
+plan(multisession)
+
+furrr:future_map_dfr()
+```
+
+
+## 4.0 launch Jobs
+
+Do you know that you can run and schedule jobs directly within RStudio and avoid to wait for them to be completed?
+This is a rather unknown yet powerful rstudio built-in feature (RSudio version>?) which allows users to set up computing intesive tasks without stopping them working on other things. 
+
+... intro jto jobs and scereenshots
+
+
+
+
+
+

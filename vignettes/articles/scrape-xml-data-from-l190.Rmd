@@ -1,0 +1,27 @@
+---
+title: "Scrape xml data from l190"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, eval = FALSE}
+library(corel190)
+```
+
+
+## How to scrape information from L190 [dati.anticorruzione](https://dati.anticorruzione.it/#/l190) with `corel190`
+
+
+```{r example, eval=FALSE}
+
+```
+
+
+## prelims
+
+## 

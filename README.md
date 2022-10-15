@@ -12,9 +12,41 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/CORE-forge/corel190/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CORE-forge/corel190/actions/workflows/R-CMD-check.yaml)
 [![covr](https://github.com/CORE-forge/corel190/actions/workflows/covr.yaml/badge.svg)](https://github.com/CORE-forge/corel190/actions/workflows/covr.yaml)
 [![pkgdown](https://github.com/CORE-forge/corel190/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/CORE-forge/corel190/actions/workflows/pkgdown.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/CORE-forge/corel190/branch/main/graph/badge.svg)](https://app.codecov.io/gh/CORE-forge/corel190?branch=main)
 <!-- badges: end -->
 
-The goal of corel190 is to …
+The goal of corel190 is to provide a tidy interface to [L190/2021
+dati.anticorruzione](https://dati.anticorruzione.it/#/l190) on ANAC
+platforms. Through this package, you may freely access data on
+anti-corruption, transparency, and public contracts managed by ANAC in
+the context of its institutional activities. On their platform available
+data can be viewed and downloaded via the appropriate sub-sections; for
+example, in the section “Analytics,” there is a tool for browsing and
+analyzing data on public contracts, while in the section “Dataset” there
+is a collection of open JSON, CSV, and XML files that can be downloaded
+for free.
+
+The following information has been made public.
+
+-   **RPCT**: a list of those responsible for the prevention of
+    corruption and transparency.
+-   **In-House**: a list of administrative and judicial bodies that
+    operate by direct payments to their own companies (art. 192 of the
+    D.Lgs. n. 50/2016);
+-   **L.190/2012**: list of permitted and elaborated communications in
+    accordance with Art. 1, Paragraph 32 of the Legge 190/2012;
+    -   **Registro Comunicazioni**: the interved communications between
+        CAs and ANAC
+-   **Albo Arbitri**: Arbitri Albo della Camera Arbitrale;
+-   **Dataset**: list of Open Data datasets published by the Authority;
+-   **Analytics**: dashboard on public contracts for labor, services,
+    and supplies.
+
+Pkg `corel190` serves this data (previously cleaned) by simply loading
+i.e. `library(corel190)` the package. Moreover it serves a set of
+convenient functions to interact with **xml** data coming from
+**Registro Comunicazione** L190.
 
 ## Installation
 
@@ -26,43 +58,15 @@ You can install the development version of corel190 from
 devtools::install_github("CORE-forge/corel190")
 ```
 
-## Example
+## 🗒 todos
 
-This is a basic example which shows you how to solve a common problem:
+-   add **ANAC** logo to plots.
+-   in-house data has too many commas to be parsed, find a smarter way.
+-   add insistently and possibly wrappers in vignette
+-   moving out open data exept fot l190, this should be made onty fror
+    L190.
 
-``` r
-library(corel190)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
-
-\## Code of Conduct
+## Code of Conduct
 
 Please note that the corel190 project is released with a [Contributor
 Code of

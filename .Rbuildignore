@@ -7,3 +7,6 @@
 ^CODE_OF_CONDUCT\.md$
 ^data-raw$
 ^\.github$
+^\.covrignore$
+^codecov\.yml$
+^vignettes/articles$

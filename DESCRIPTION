@@ -8,6 +8,8 @@ Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Suggests: 
+    covr,
+    rmarkdown,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
@@ -16,3 +18,18 @@ Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 URL: https://core-forge.github.io/corel190/
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Imports: 
+    curl,
+    ggplot2,
+    glue,
+    jsonlite,
+    logger,
+    purrr,
+    rvest,
+    stringr,
+    tidyr,
+    XML,
+    xml2

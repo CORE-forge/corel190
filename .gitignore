@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 docs
+data/l190-dati-json*
+data/l190-metadati-json*

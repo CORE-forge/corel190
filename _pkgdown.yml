@@ -20,3 +20,12 @@ template:
         icon: fa-twitter
         href: http://twitter.com/SalviniQ
         aria-label: Twitter
+articles:
+  - title: Play with dati.anticorruzione l190
+    navbar: Play with dati.anticorruzione l190
+    contents:
+    - articles/scrape-xml-data-from-l190
+  - title: scrape dati.anticorruzione
+    navbar: scraping dati.anticorruzione ANAC at scale
+    contents:
+    - articles/scraping-l190-at-scale
